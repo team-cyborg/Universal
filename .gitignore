@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # My config file
-config/*.js
+config/config.js
