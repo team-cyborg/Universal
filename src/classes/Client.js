@@ -1,13 +1,15 @@
 /* eslint-disable class-methods-use-this */
-const mongoose = require('mongoose');
 const express = require('express');
 const { Client, Collection, REST, Routes } = require('discord.js');
 const { config } = require('dotenv');
 const { join } = require('path');
 const { readdirSync } = require('fs');
+const path = require('path');
 const { Logger } = require('./Logger');
 const { settings } = require('../config/config');
-const Database = require('../models/database')
+const { sleep } = require('../utils/sleep');
+const { sendContent, sendEmbed } = require('../utils/send');
+const { Database } = require('./Database');
 
 config();
 
@@ -21,8 +23,12 @@ class UniClient extends Client {
             this.settings = settings;
             this.server = express();
             this.rest = new REST({ version: '10' }).setToken(this.settings.bot.token);
-            this.database = Database;
-            this.mongo = mongoose;
+            this.wait = sleep;
+            this.send_content = sendContent;
+            this.send_embed = sendEmbed;
+            this.guild_database = new Database(path.join(__dirname, '..', 'database', 'guilds', 'guilds.json'));
+            this.blacklisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'blacklisted', 'blacklisted.json'));
+            this.whitelisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'whitelisted', 'whitelisted.json'));
 
             this.handleCommands(join(__dirname, '..', 'commands'));
             this.handleEvents(join(__dirname, '..', 'events'));
@@ -57,7 +63,7 @@ class UniClient extends Client {
       }
 
       log(info) {
-            this.loggger.log(info)
+            this.loggger.log(info);
       }
 
       start() {
@@ -69,12 +75,14 @@ class UniClient extends Client {
                   this.rest.put(
                         Routes.applicationCommands(this.settings.bot.id),
                         { body: this.commandsArray }
+                  // eslint-disable-next-line no-console
                   ).then((data) => this.log(`${data.length} (/) commands registered globally.`)).catch(console.error);
             } else {
                   this.rest.put(
                         Routes.applicationGuildCommands(this.settings.bot.id, this.settings.bot.guildId),
                         { body: this.commandsArray }
-                  ).then((data) => this.log(`${data.length} (/) commands registered locally.`)).catch(console.error)
+                  // eslint-disable-next-line no-console
+                  ).then((data) => this.log(`${data.length} (/) commands registered locally.`)).catch(console.error);
             }
       }
 }

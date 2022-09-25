@@ -1,7 +1,7 @@
 module.exports = {
       data: {
             name: 'debug',
-            once: true
+            once: false
       },
 
       /**
@@ -11,4 +11,4 @@ module.exports = {
       run: async (universal, info) => {
             universal.log(info);
       }
-}
+};

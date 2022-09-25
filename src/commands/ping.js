@@ -14,4 +14,4 @@ module.exports = {
                   content: `${universal.user.username} says: Pong!`
             });
       }
-}
+};

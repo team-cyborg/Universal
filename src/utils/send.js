@@ -1,4 +1,4 @@
-const { settings } = require('../config/config')
+const { settings } = require('../config/config');
 
 /**
  * 
@@ -12,14 +12,14 @@ module.exports.sendEmbed = (interaction, message) => {
             color: settings.bot.embed.color,
             description: message.slice(0, 1999),
             timestamp: settings.bot.embed.timestamp
-      }
+      };
 
-      return interaction.reply({ embeds: [embed] })
-}
+      return interaction.reply({ embeds: [embed] });
+};
 
 /**
  * 
  * @param {import('discord.js').Interaction} interaction 
  * @param {String[]} message 
  */
-module.exports.sendMsg = (interaction, message) => interaction.reply({ content: message.slice(0, 1999) })
+module.exports.sendContent = (interaction, message) => interaction.reply({ content: message.slice(0, 1999) });
