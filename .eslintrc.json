@@ -14,10 +14,22 @@
 		"jest": true
 	},
 	"rules": {
+		"block-scoped-var": "error",
+		"no-mixed-spaces-and-tabs": "error",
+		"key-spacing": "error",
+		"comma-spacing": "error",
+		"semi-spacing": "error",
+		"object-curly-spacing": "error",
+		"semi": "error",
+		"computed-property-spacing": "error",
+		"new-cap": "error",
+		"capitalized-comments": "error",
+		"block-spacing": "error",
+
 		"no-debugger": 0,
-		"no-use-before-define": "off",
-		"no-alert": 0,
-		"no-await-in-loop": 0,
+		"no-use-before-define": "error",
+		"no-alert": 2,
+		"no-await-in-loop": 2,
 		"no-return-assign": ["error", "except-parens"],
 		"no-restricted-syntax": [
 			2,
@@ -26,7 +38,7 @@
 			"WithStatement"
 		],
 		"no-unused-vars": [
-			1,
+			2,
 			{
 				"ignoreRestSiblings": true,
 				"argsIgnorePattern": "res|next|^err"
@@ -51,10 +63,10 @@
 				"props": false
 			}
 		],
-		"no-console": 0,
+		"no-console": 2,
 		"import/prefer-default-export": 0,
 		"import": 0,
-		"func-names": 0,
+		"func-names": 2,
 		"space-before-function-paren": 0,
 		"comma-dangle": 0,
 		"max-len": 0,
@@ -96,23 +108,6 @@
 			{
 				"avoidEscape": true,
 				"allowTemplateLiterals": true
-			}
-		],
-		"prettier/prettier": [
-			"error",
-			{
-				"trailingComma": "es5",
-				"singleQuote": true,
-				"printWidth": 80,
-				"endOfLine": "auto",
-				"tabWidth": 4,
-				"useTabs": true,
-				"semi": true,
-				"jsxSingleQuote": true,
-				"bracketSpacing": true,
-				"arrowParens": "always",
-				"requirePragma": true,
-				"insertPragma": true
 			}
 		],
 		"jsx-a11y/href-no-hash": "off",

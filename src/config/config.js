@@ -1,5 +1,5 @@
 const { GatewayIntentBits } = require('discord.js');
-const { config } = require('dotenv')
+const { config } = require('dotenv');
 
 config();
 
@@ -27,9 +27,6 @@ module.exports.settings = {
                   timestamp: new Date(),
                   color: { default: 0x5558ff, alert: 0xcc3300, warn: 0xffcc00 },
                   title: 'Universal™'
-            },
-            mongo: {
-                  url: '' || process.env.mongoURL
             }
       }
-}
+};
