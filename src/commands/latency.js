@@ -13,7 +13,7 @@ module.exports = {
             const latency = Date.now() - interaction.createdTimestamp;
 
             await interaction.deferReply();
-            await universal.wait(2000);
+            await universal.wait(1000);
             await interaction.reply({
                   content: `\` My current latency is: ${latency} \``
             });

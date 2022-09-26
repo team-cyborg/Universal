@@ -22,6 +22,8 @@ module.exports = {
             
             if (!team.includes(interaction.user.id)) return;
 
+            await interaction.deferReply();
+            await universal.wait(1000);
             await interaction.reply({
                   content: [
                         '```fix',

@@ -11,7 +11,7 @@ module.exports = {
        */
       run: async (universal, interaction) => {
             await interaction.deferReply();
-            await universal.wait(2000);
+            await universal.wait(1000);
             await interaction.reply({
                   content: `\` My current latency is: ${universal.ws.ping} \``
             });
