@@ -13,7 +13,8 @@ module.exports = {
             const latency = Date.now() - interaction.createdTimestamp;
 
             await interaction.reply({
-                  content: `\` My current latency is: ${latency} \``
+                  content: `\` My current latency is: ${latency} \``,
+                  ephemeral: true
             });
       }
 };

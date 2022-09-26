@@ -11,7 +11,8 @@ module.exports = {
        */
       run: async (universal, interaction) => {
             await interaction.reply({
-                  content: `\` My current latency is: ${universal.ws.ping} \``
+                  content: `\` My current latency is: ${universal.ws.ping} \``,
+                  ephemeral: true
             });
       }
 };
