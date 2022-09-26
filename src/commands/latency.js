@@ -12,9 +12,10 @@ module.exports = {
       run: async (universal, interaction) => {
             const latency = Date.now() - interaction.createdTimestamp;
 
+            await interaction.deferReply();
+            await universal.wait(1000);
             await interaction.reply({
-                  content: `\` My current latency is: ${latency} \``,
-                  ephemeral: true
+                  content: `\` My current latency is: ${latency} \``
             });
       }
 }; 
