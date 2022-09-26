@@ -14,7 +14,7 @@ module.exports = {
 
             try {
                   return await interaction.reply({
-                        content: `\` My current latency is: ${latency} \``
+                        content: `\` My current latency is: ${latency}ms \``
                   });
             } catch (e) {
                   universal.log(e);
