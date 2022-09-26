@@ -10,6 +10,5 @@ module.exports = {
        */
       run: async (universal) => {
             universal.log(`Online: ${universal.user.tag}`);
-            universal.deploySlashCommands(false);
       }
 };
