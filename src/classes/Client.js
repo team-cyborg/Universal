@@ -29,7 +29,7 @@ class UniClient extends Client {
             this.guild_database = new Database(path.join(__dirname, '..', 'database', 'guilds', 'guilds.json'));
             // this.blacklisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'blacklisted', 'blacklisted.json'));
             // this.whitelisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'whitelisted', 'whitelisted.json'));
-
+            
             this.handleCommands(join(__dirname, '..', 'commands'));
             this.handleEvents(join(__dirname, '..', 'events'));
       }
