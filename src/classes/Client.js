@@ -1,5 +1,5 @@
 /* eslint-disable class-methods-use-this */
-const express = require('express');
+const Express = require('express');
 const { Client, Collection, REST, Routes } = require('discord.js');
 const { config } = require('dotenv');
 const { join } = require('path');
@@ -21,7 +21,7 @@ class UniClient extends Client {
             this.commandsArray = [];
             this.loggger = new Logger(join(__dirname, '..', 'logs', 'debug.log'));
             this.settings = settings;
-            this.server = express();
+            this.app = Express();
             this.rest = new REST({ version: '10' }).setToken(this.settings.bot.token);
             this.wait = sleep;
             this.send_content = sendContent;
@@ -32,6 +32,7 @@ class UniClient extends Client {
             
             this.handleCommands(join(__dirname, '..', 'commands'));
             this.handleEvents(join(__dirname, '..', 'events'));
+            this.server();
       }
 
       handleCommands(commandPath) {
@@ -84,6 +85,19 @@ class UniClient extends Client {
                   // eslint-disable-next-line no-console
                   ).then((data) => this.log(`${data.length} (/) commands registered locally.`)).catch(console.error);
             }
+      }
+
+      server() {
+            const PORT = 5000;
+
+            this.app.get('/', (req, res) => {
+                  res.send('Hail the World!');
+            });
+
+            this.app.listen(PORT, () => {
+                  this.log(`Server started on: ${PORT}`);
+            });
+
       }
 }
 
