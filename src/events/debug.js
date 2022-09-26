@@ -9,6 +9,10 @@ module.exports = {
        * @param {import('../classes/Client').UniClient} universal 
        */
       run: async (universal, info) => {
-            universal.log(info);
+            try {
+                  universal.log(info);
+            } catch (e) {
+                  universal.log(e);
+            }
       }
 };

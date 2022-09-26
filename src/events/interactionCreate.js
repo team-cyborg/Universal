@@ -1,7 +1,7 @@
 module.exports = {
       data: {
             name: 'interactionCreate',
-            once: true
+            once: false
       },
 
       /**

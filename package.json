@@ -6,7 +6,7 @@
   "author": "team-universal <devinsane.79@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "cls && node .",
+    "start": "node .",
     "dev": "nodemon .",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"

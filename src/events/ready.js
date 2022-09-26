@@ -1,3 +1,5 @@
+const { ActivityType } = require('discord.js');
+
 module.exports = {
       data: {
             name: 'ready',
@@ -9,7 +11,11 @@ module.exports = {
        * @param {import('../classes/Client').UniClient} universal 
        */
       run: async (universal) => {
+            const totalUsers = universal.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c);
+            const totalGuilds = universal.guilds.cache.size;
+
+
             universal.log(`Online: ${universal.user.tag}`);
-            universal.deploySlashCommands(false);
+            universal.user.setActivity(`${totalUsers} users in ${totalGuilds} guilds.`, { type: ActivityType.Listening });
       }
 };

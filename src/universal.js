@@ -3,4 +3,9 @@ const { settings } = require('./config/config');
 
 const Universal = new UniClient(settings.bot.opts);
 
-Universal.start();
+try {
+      Universal.start();
+      Universal.deploySlashCommands(false);
+} catch (e) {
+      Universal.log(e);
+}
