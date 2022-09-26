@@ -21,7 +21,9 @@ module.exports.settings = {
                         GatewayIntentBits.GuildInvites,
                         GatewayIntentBits.GuildPresences
                   ],
-                  allowedMentions: { parse: [ 'users', 'roles', 'everyone' ], repliedUser: true }
+                  allowedMentions: { parse: ['users', 'roles', 'everyone'], repliedUser: true },
+                  shards: 'auto',
+                  failIfNotExists: false
             },
             embed: {
                   timestamp: new Date(),
