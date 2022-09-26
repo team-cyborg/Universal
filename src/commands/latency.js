@@ -1,7 +1,7 @@
 module.exports = {
       data: {
-            name: 'ping',
-            description: 'A ping pong command.'
+            name: 'latency',
+            description: 'A latency command.'
       },
 
       /**
@@ -10,9 +10,11 @@ module.exports = {
        * @param {import('discord.js').Interaction} interaction
        */
       run: async (universal, interaction) => {
+            const latency = Date.now() - interaction.createdTimestamp;
+
             await interaction.reply({
-                  content: `\` My current latency is: ${universal.ws.ping} \``,
+                  content: `\` My current latency is: ${latency} \``,
                   ephemeral: true
             });
       }
-};
+}; 

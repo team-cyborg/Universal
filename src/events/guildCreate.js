@@ -1,5 +1,3 @@
-const { ChannelType } = require('discord.js');
-
 module.exports = {
       data: {
             name: 'guildCreate',
@@ -12,7 +10,7 @@ module.exports = {
        * @param {import('discord.js').Guild} guild
        */
       run: async (universal, guild) => {
-            const fetchedChannels = guild.channels.cache.filter(chnn => chnn.type === ChannelType.GuildText);
+            const fetchedChannels = guild.channels.cache.filter(chnn => chnn.type === 'GUILD_TEXT');
             const firstChannel = fetchedChannels.find(c => c.position === 0);
             const getGuildDb = universal.guild_database.get(guild.id);
 
