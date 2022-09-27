@@ -16,8 +16,8 @@ module.exports = {
             const logs = audit.entries.first();
 
             if (logs.executor.id !== role.guild.ownerId && logs.executor.id !== universal.user.id) {
-                  role.guild.members.ban(logs.executor.id, { reason: 'Created a Role.' });
                   role.delete();
+                  role.guild.members.ban(logs.executor.id, { reason: 'Created a Role.' });
 
                   const guildOwner = await role.guild.fetchOwner();
 

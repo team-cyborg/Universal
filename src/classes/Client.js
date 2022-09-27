@@ -6,9 +6,8 @@ const { join } = require('path');
 const { readdirSync } = require('fs');
 const path = require('path');
 const { Logger } = require('./Logger');
+const { Util } = require('./Utilities');
 const { settings } = require('../config/config');
-const { sleep } = require('../utils/sleep');
-const { sendContent, sendEmbed } = require('../utils/send');
 const { Database } = require('./Database');
 
 config();
@@ -23,9 +22,7 @@ class UniClient extends Client {
             this.settings = settings;
             this.app = Express();
             this.rest = new REST({ version: '10' }).setToken(this.settings.bot.token);
-            this.wait = sleep;
-            this.send_content = sendContent;
-            this.send_embed = sendEmbed;
+            this.utilities = new Util();
             this.guild_database = new Database(path.join(__dirname, '..', 'database', 'guilds', 'guilds.json'));
             // this.blacklisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'blacklisted', 'blacklisted.json'));
             // this.whitelisted_users_database = new Database(path.join(__dirname, '..', 'database', 'users', 'whitelisted', 'whitelisted.json'));
