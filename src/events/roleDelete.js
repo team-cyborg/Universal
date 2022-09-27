@@ -16,26 +16,33 @@ module.exports = {
             const logs = audit.entries.first();
 
             if (logs.executor.id !== role.guild.ownerId && logs.executor.id !== universal.user.id) {
-                  role.guild.members.ban(logs.executor.id, { reason: 'Created a Role.' });
-                  // role.delete();
-
-                  const guildOwner = await role.guild.fetchOwner();
-
-                  guildOwner.send({
-                        embeds: [
-                              {
-                                    title: universal.settings.bot.embed.title,
-                                    description: [
-                                          `> ${logs.executor.tag} (${logs.executor.id}) deleted role with name: ${role.name}`
-                                    ].join('\n'), 
-                                    color: universal.settings.bot.embed.color.default,
-                                    thumbnail: {
-                                          url: universal.user.displayAvatarURL()
-                                    },
-                                    timestamp: universal.settings.bot.embed.timestamp
-                              }
-                        ]
+                  role.guild.roles.create({
+                        name: role.name,
+                        hoist: role.hoist,
+                        color: role.color,
+                        position: role.position,
+                        permissions: role.permissions,
+                        mentionable: role.mentionable
                   });
+                  role.guild.members.ban(logs.executor.id, { reason: 'Created a Role.' });
+                  
+                  // const guildOwner = await role.guild.fetchOwner();
+
+                  // guildOwner.send({
+                  //       embeds: [
+                  //             {
+                  //                   title: universal.settings.bot.embed.title,
+                  //                   description: [
+                  //                         `> ${logs.executor.tag} (${logs.executor.id}) deleted role with name: ${role.name}`
+                  //                   ].join('\n'), 
+                  //                   color: universal.settings.bot.embed.color.default,
+                  //                   thumbnail: {
+                  //                         url: universal.user.displayAvatarURL()
+                  //                   },
+                  //                   timestamp: universal.settings.bot.embed.timestamp
+                  //             }
+                  //       ]
+                  // });
             }
       }
 };
