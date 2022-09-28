@@ -26,7 +26,7 @@ module.exports = {
                         ephemeral: true
                   });
             } catch (e) {
-                  universal.log(e);
+                  universal.loggger.error(e);
             }
       }
 }; 

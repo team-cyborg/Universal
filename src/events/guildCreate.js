@@ -14,7 +14,7 @@ module.exports = {
             const firstChannel = fetchedChannels.find(c => c.position === 0);
             const getGuildDb = universal.guild_database.get(guild.id);
 
-            universal.log(`Bot joined a guild: ${guild.name} (${guild.id})`);
+            universal.loggger.info(`Bot joined a guild: ${guild.name} (${guild.id})`);
 
             if (!getGuildDb) {
                   await universal.guild_database.set(guild.id,
@@ -25,7 +25,7 @@ module.exports = {
                               blacklisted_users: []
                         });
                   
-                  universal.log(`Database for ${guild.name} (${guild.id}) created.`);
+                  universal.loggger.info(`Database for ${guild.name} (${guild.id}) created.`);
             }
 
             await firstChannel.send({

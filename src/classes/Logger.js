@@ -1,29 +1,45 @@
-const winston = require('winston');
-require('colors');
+const { Console } = require('console');
+const { format } = require('date-and-time')
+
+require('colors')
 
 class Logger {
-      constructor(LogFile) {
-            this.logger = winston.createLogger({
-                  transports: [
-                        new winston.transports.File({ filename: LogFile })
-                  ]
+      constructor({ out, errout }) {
+            if (!out || !errout) throw new Error('Logger not configured.');
+
+            this.logger = new Console({
+                  stdout: out,
+                  stderr: errout,
             });
+
+            this.timestamp = format(new Date(), 'YYYY/MM/DD HH:mm:ss')
       }
 
-      log(info) {
-            const D = new Date();
-            const time = [D.getHours(), D.getMinutes(), D.getSeconds()];
-            const date = [D.getDate(), D.getMonth(), D.getFullYear()];
+      /**
+       * Logs info to log file
+       * @param {string} message
+       */
+      info(message) {
+            this.logger.info('%s - INFO! - %s', this.timestamp, message);
+            console.info('%s - INFO! - %s', this.timestamp, message);
+      }
 
-            const today = ''.concat(time.join(':'), ' - ', date.join(':'));
+      /**
+       * Logs warn to log file
+       * @param {string} message 
+       */
+      warn(message) {
+            this.logger.warn('%s - WARN! - %s', this.timestamp, message);
+            console.warn('%s - WARN! - %s', this.timestamp, message);
+      }
 
-            this.logger.log({
-                  level: 'info',
-                  message: `[${today}] :: ${info}`
-            });
-
-            // eslint-disable-next-line no-console
-            console.log(`[${today}] :: ${info}`);
+      /**
+       * Logs error to log file
+       * @param {string} message 
+       */
+      error(message) {
+            this.logger.error('%s - ERROR! - %s', this.timestamp, message);
+            console.error('%s - ERROR! - %s', this.timestamp, message);
       }
 }     
 

@@ -10,9 +10,9 @@ module.exports = {
        */
       run: async (universal, info) => {
             try {
-                  universal.log(info);
+                  universal.loggger.info(info);
             } catch (e) {
-                  universal.log(e);
+                  universal.loggger.error(e);
             }
       }
 };
