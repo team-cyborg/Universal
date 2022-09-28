@@ -1,14 +1,15 @@
 /* eslint-disable class-methods-use-this */
 const Express = require('express');
+const gradient = require('gradient-string');
 const { Client, Collection, REST, Routes } = require('discord.js');
 const { config } = require('dotenv');
-const { join } = require('path');
-const { readdirSync, createWriteStream } = require('fs');
+const { readdirSync, createWriteStream, readFileSync, createReadStream } = require('fs');
 const path = require('path');
 const { Logger } = require('./Logger');
 const { Util } = require('./Utilities');
 const { settings } = require('../config/config');
 const { Database } = require('./Database');
+const { createInterface } = require('readline');
 
 config();
 
@@ -26,10 +27,17 @@ class UniClient extends Client {
             this.rest = new REST({ version: '10' }).setToken(this.settings.bot.token);
             this.utilities = new Util();
             this.guild_database = new Database(path.join(__dirname, '..', 'database', 'guilds', 'guilds.json'));
-            
-            this.handleCommands(join(__dirname, '..', 'commands'));
-            this.handleEvents(join(__dirname, '..', 'events'));
-            // this.server();
+      }
+
+      async menu() {
+            const menu = createInterface({
+                  input: createReadStream('./src/assets/menu.txt'),
+                  crlfDelay: Infinity
+            })
+
+            for await (const line of menu) {
+                  console.log(gradient.cristal(line));
+            }
       }
 
       handleCommands(commandPath) {
