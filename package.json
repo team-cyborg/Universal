@@ -19,6 +19,7 @@
     "dotenv": "^16.0.2",
     "enmap": "^5.9.1",
     "express": "^4.18.1",
+    "gradient-string": "^2.0.2",
     "mongoose": "^6.6.1"
   },
   "devDependencies": {
