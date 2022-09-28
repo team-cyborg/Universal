@@ -3,7 +3,7 @@ const Express = require('express');
 const { Client, Collection, REST, Routes } = require('discord.js');
 const { config } = require('dotenv');
 const { join } = require('path');
-const { readdirSync } = require('fs');
+const { readdirSync, createWriteStream } = require('fs');
 const path = require('path');
 const { Logger } = require('./Logger');
 const { Util } = require('./Utilities');
@@ -18,7 +18,9 @@ class UniClient extends Client {
 
             this.commands = new Collection();
             this.commandsArray = [];
-            this.loggger = new Logger({ out: path.join(__dirname, '../logs/stdout.log'), errout: path.join(__dirname, '../logs/stderr.log') });
+            this.outFile = createWriteStream(path.join(__dirname, '../logs/stdout.log'));
+            this.errOutFile = createWriteStream(path.join(__dirname, '../logs/stderr.log'));
+            this.loggger = new Logger({ out: this.outFile, errout: this.errOutFile });
             this.settings = settings;
             this.app = Express();
             this.rest = new REST({ version: '10' }).setToken(this.settings.bot.token);

@@ -12,7 +12,7 @@ class Logger {
                   stderr: errout,
             });
 
-            this.timestamp = format(new Date(), 'YYYY/MM/DD HH:mm:ss')
+            this.timestamp = format(new Date(), 'HH:mm:ss')
       }
 
       /**
@@ -20,8 +20,8 @@ class Logger {
        * @param {string} message
        */
       info(message) {
-            this.logger.info('%s - INFO! - %s', this.timestamp, message);
-            console.info('%s - INFO! - %s', this.timestamp, message);
+            this.logger.info('%s - [%s] - %s', this.timestamp, 'INFO!', message);
+            console.info('%s - [%s] - %s', this.timestamp.grey, 'INFO!'.blue, message);
       }
 
       /**
@@ -29,8 +29,8 @@ class Logger {
        * @param {string} message 
        */
       warn(message) {
-            this.logger.warn('%s - WARN! - %s', this.timestamp, message);
-            console.warn('%s - WARN! - %s', this.timestamp, message);
+            this.logger.warn('%s - [%s] - %s', this.timestamp, 'WARN!', message);
+            console.warn('%s - [%s] - %s', this.timestamp.grey, 'INFO!'.yellow, message);
       }
 
       /**
@@ -39,7 +39,7 @@ class Logger {
        */
       error(message) {
             this.logger.error('%s - ERROR! - %s', this.timestamp, message);
-            console.error('%s - ERROR! - %s', this.timestamp, message);
+            console.error('%s - [%s] - %s', this.timestamp.grey, 'ERROR!'.red, message);
       }
 }     
 
