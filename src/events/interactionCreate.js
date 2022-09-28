@@ -17,7 +17,7 @@ module.exports = {
             try {
                   await commands.run(universal, interaction);
             } catch (e) {
-                  universal.log(e);
+                  universal.loggger.error(e);
                   await interaction.reply({ content: 'Couldn\'t execute the command.', ephemeral: true });
             }
       }

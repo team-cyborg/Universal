@@ -14,8 +14,7 @@ module.exports = {
             const totalUsers = universal.guilds.cache.map((g) => g.memberCount).reduce((a, c) => a + c);
             const totalGuilds = universal.guilds.cache.size;
 
-
-            universal.log(`Online: ${universal.user.tag}`);
+            universal.loggger.info(`Online: ${universal.user.tag}`);
             universal.user.setActivity(`${totalUsers} users in ${totalGuilds} guilds.`, { type: ActivityType.Listening });
       }
 };

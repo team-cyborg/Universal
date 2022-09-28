@@ -9,6 +9,6 @@ module.exports = {
        * @param {import('../classes/Client').UniClient} universal 
        */
       run: (universal, error) => {
-            universal.log(error);
+            universal.loggger.error(error);
       }
 };
