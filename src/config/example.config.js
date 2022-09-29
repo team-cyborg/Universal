@@ -1,4 +1,9 @@
 /**
+ * @author Samarth Sharma <devinsane.79@gmail.com>
+ */
+
+
+/**
  * These are just the imports so you can ignore them !6_9!
  */
 const { GatewayIntentBits } = require('discord.js');
@@ -14,11 +19,11 @@ module.exports.settings = {
             /**
              * Discord bot ID
              */
-            id: '957317091147538493',
+            id: '',
             /**
              * Discord bot support server ID.
              */
-            guildId: '912594669785972736',
+            guildId: '',
             /**
              * @WARNING To prevent token leakage when using a public code editor like replit.com, make sure you use environment secrets to save credentials
              */
@@ -28,7 +33,7 @@ module.exports.settings = {
              * 
              * @example ['123456789...', '234567891...', '345678912...']
              */
-            team: ['953235785782534174'],
+            team: [''],
             /**
              * Two environments are available, you can select one according to your preference.
              * 
@@ -38,11 +43,11 @@ module.exports.settings = {
             /**
              * This will be your invititaion url just change the {CLIENT_ID} --> YOUR DISCORD BOT ID.
              */
-            inv_url: `https://discord.com/api/oauth2/authorize?client_id=957317091147538493&permissions=8&scope=bot%20applications.commands`,
+            inv_url: `https://discord.com/api/oauth2/authorize?client_id={CLIENT_ID}&permissions=8&scope=bot%20applications.commands`,
             /**
              * Make a permanent invite link of your bot support server & save it here for future uses.
              */
-            support_server_url: 'https://discord.gg/2V6TVaBPtu',
+            support_server_url: 'https://discord.gg/{CODE}',
             /**
              * Client Options
              * 
