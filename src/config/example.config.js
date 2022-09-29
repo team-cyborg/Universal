@@ -54,7 +54,7 @@ module.exports.settings = {
              * @WARNING If you dont know what to do here, do not touch these settings else it may cause the bot crashing again & again.
              */
             opts: {
-                  /**
+                  /*%
                    * Client Intents.
                    */
                   intents: [
