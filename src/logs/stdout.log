@@ -1,50 +1,52 @@
-15:55:38 - [INFO!] - Command Loaded: LATENCY
-15:55:38 - [INFO!] - Command Loaded: PING
-15:55:38 - [INFO!] - Command Loaded: SLIST
-15:55:38 - [INFO!] - Event Success: CHANNELCREATE
-15:55:38 - [INFO!] - Event Success: CHANNELDELETE
-15:55:38 - [INFO!] - Event Success: CHANNELUPDATE
-15:55:38 - [INFO!] - Event Success: DEBUG
-15:55:38 - [INFO!] - Event Success: EMOJICREATE
-15:55:38 - [INFO!] - Event Success: EMOJIDELETE
-15:55:38 - [INFO!] - Event Success: EMOJIUPDATE
-15:55:38 - [INFO!] - Event Success: ERROR
-15:55:38 - [INFO!] - Event Success: GUILDBANADD
-15:55:38 - [INFO!] - Event Success: GUILDCREATE
-15:55:38 - [INFO!] - Event Success: GUILDDELETE
-15:55:38 - [INFO!] - Event Success: GUILDMEMBERREMOVE
-15:55:38 - [INFO!] - Event Success: GUILDUPDATE
-15:55:38 - [INFO!] - Event Success: INTERACTIONCREATE
-15:55:38 - [INFO!] - Event Success: MESSAGECREATE
-15:55:38 - [INFO!] - Event Success: READY
-15:55:38 - [INFO!] - Event Success: ROLECREATE
-15:55:38 - [INFO!] - Event Success: ROLEDELETE
-15:55:38 - [INFO!] - Event Success: ROLEUPDATE
-15:55:38 - [INFO!] - Event Success: WARN
-15:55:38 - [INFO!] - Event Success: WEBHOOKCREATE
-15:55:38 - [INFO!] - Provided token: OTU3MzE3MDkxMTQ3NTM4NDkz.GwPHdZ.**************************************
-15:55:38 - [INFO!] - Preparing to connect to the gateway...
-15:55:38 - [INFO!] - [WS => Manager] Fetched Gateway Information
+21:45:13 - [INFO!] - Command Loaded: LATENCY
+21:45:13 - [INFO!] - Command Loaded: PING
+21:45:13 - [INFO!] - Command Loaded: SLIST
+21:45:13 - [INFO!] - Event Success: CHANNELCREATE
+21:45:13 - [INFO!] - Event Success: CHANNELDELETE
+21:45:13 - [INFO!] - Event Success: CHANNELUPDATE
+21:45:13 - [INFO!] - Event Success: DEBUG
+21:45:13 - [INFO!] - Event Success: EMOJICREATE
+21:45:13 - [INFO!] - Event Success: EMOJIDELETE
+21:45:13 - [INFO!] - Event Success: EMOJIUPDATE
+21:45:13 - [INFO!] - Event Success: ERROR
+21:45:13 - [INFO!] - Event Success: GUILDBANADD
+21:45:13 - [INFO!] - Event Success: GUILDCREATE
+21:45:13 - [INFO!] - Event Success: GUILDDELETE
+21:45:13 - [INFO!] - Event Success: GUILDMEMBERREMOVE
+21:45:13 - [INFO!] - Event Success: GUILDUPDATE
+21:45:13 - [INFO!] - Event Success: INTERACTIONCREATE
+21:45:13 - [INFO!] - Event Success: MESSAGECREATE
+21:45:13 - [INFO!] - Event Success: READY
+21:45:13 - [INFO!] - Event Success: ROLECREATE
+21:45:13 - [INFO!] - Event Success: ROLEDELETE
+21:45:13 - [INFO!] - Event Success: ROLEUPDATE
+21:45:13 - [INFO!] - Event Success: WARN
+21:45:13 - [INFO!] - Event Success: WEBHOOKCREATE
+21:45:13 - [INFO!] - Provided token: OTU3MzE3MDkxMTQ3NTM4NDkz.GwPHdZ.**************************************
+21:45:13 - [INFO!] - Preparing to connect to the gateway...
+21:45:13 - [INFO!] - [WS => Manager] Fetched Gateway Information
     URL: wss://gateway.discord.gg
     Recommended Shards: 1
-15:55:38 - [INFO!] - [WS => Manager] Session Limit Information
+21:45:13 - [INFO!] - [WS => Manager] Session Limit Information
     Total: 1000
-    Remaining: 969
-15:55:38 - [INFO!] - [WS => Manager] Using the recommended shard count provided by Discord: 1
-15:55:38 - [INFO!] - [WS => Manager] Spawning shards: 0
-15:55:38 - [INFO!] - [WS => Shard 0] [CONNECT]
+    Remaining: 996
+21:45:13 - [INFO!] - [WS => Manager] Using the recommended shard count provided by Discord: 1
+21:45:13 - [INFO!] - [WS => Manager] Spawning shards: 0
+21:45:13 - [INFO!] - [WS => Shard 0] [CONNECT]
     Gateway    : wss://gateway.discord.gg/
     Version    : 10
     Encoding   : json
     Compression: none
-15:55:38 - [INFO!] - [WS => Shard 0] Setting a HELLO timeout for 20s.
-15:55:38 - [INFO!] - 3 (/) commands registered globally.
-15:55:38 - [INFO!] - [WS => Shard 0] [CONNECTED] Took 1106ms
-15:55:38 - [INFO!] - [WS => Shard 0] Clearing the HELLO timeout.
-15:55:38 - [INFO!] - [WS => Shard 0] Setting a heartbeat interval for 41250ms.
-15:55:38 - [INFO!] - [WS => Shard 0] [IDENTIFY] Shard 0/1 with intents: 839
-15:55:38 - [INFO!] - [WS => Shard 0] [READY] Session 4495926fb2d553a90409de46b8598477.
-15:55:38 - [INFO!] - [WS => Shard 0] [ReadyHeartbeat] Sending a heartbeat.
-15:55:38 - [INFO!] - [WS => Shard 0] Shard received all its guilds. Marking as fully ready.
-15:55:38 - [INFO!] - Online: Universal™#0597
-15:55:38 - [INFO!] - [WS => Shard 0] Heartbeat acknowledged, latency of 2260ms.
+21:45:13 - [INFO!] - [WS => Shard 0] Setting a HELLO timeout for 20s.
+21:45:13 - [INFO!] - 3 (/) commands registered globally.
+21:45:13 - [INFO!] - [WS => Shard 0] [CONNECTED] Took 727ms
+21:45:13 - [INFO!] - [WS => Shard 0] Clearing the HELLO timeout.
+21:45:13 - [INFO!] - [WS => Shard 0] Setting a heartbeat interval for 41250ms.
+21:45:13 - [INFO!] - [WS => Shard 0] [IDENTIFY] Shard 0/1 with intents: 839
+21:45:13 - [INFO!] - [WS => Shard 0] [READY] Session c9a522dc02d6d86f6f2d13eb5a52b424.
+21:45:13 - [INFO!] - [WS => Shard 0] [ReadyHeartbeat] Sending a heartbeat.
+21:45:13 - [INFO!] - [WS => Shard 0] Shard received all its guilds. Marking as fully ready.
+21:45:13 - [INFO!] - Online: Universal™#0597
+21:45:13 - [INFO!] - [WS => Shard 0] Heartbeat acknowledged, latency of 4579ms.
+21:45:13 - [INFO!] - [WS => Shard 0] [HeartbeatTimer] Sending a heartbeat.
+21:45:13 - [INFO!] - [WS => Shard 0] Heartbeat acknowledged, latency of 418ms.
